@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from core.config import SessionLocal
 from app.models import User
 
-SECRET_KEY = "SECRET123"
+SECRETKEY = "SECRET123"
 ALGORITHM = "HS256"
 
 auth_scheme = OAuth2PasswordBearer(tokenUrl="/auth/login")
@@ -28,7 +28,7 @@ def get_current_user(
         )
 
     try:
-        payload = jwt.decode(token, SECRET_KEY, algorithms=[ALGORITHM])
+        payload = jwt.decode(token, SECRETKEY, algorithms=[ALGORITHM])
         user_id = payload.get("user_id")
         if user_id is None:
             raise HTTPException(status_code=401, detail="Invalid token payload")
