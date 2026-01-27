@@ -8,3 +8,5 @@ psycopg2-binary
 pydantic
 pydantic[email]
 requests
+passlib[bcrypt]
+python-jose
