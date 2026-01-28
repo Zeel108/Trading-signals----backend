@@ -11,7 +11,7 @@ app = FastAPI(title="Trading signals SaaS")
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "FRONTEND_URL"
+        "https://trading-signals-frontend.onrender.com/"
     ],
     allow_credentials=True,
     allow_methods=["*"],
