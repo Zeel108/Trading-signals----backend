@@ -32,8 +32,8 @@ def create_checkout(current_user: User = Depends(get_current_user)):
             },
             "quantity": 1,
         }],
-        success_url=f"{FRONTEND_URL}/success",
-        cancel_url=f"{FRONTEND_URL}/cancel",
+        success_url=f"{FRONTEND_URL}success",
+        cancel_url=f"{FRONTEND_URL}cancel",
         metadata={
             "user_id": str(current_user.id),
             "email": current_user.email      }
