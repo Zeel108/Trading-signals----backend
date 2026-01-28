@@ -28,6 +28,6 @@ def get_signals(user=Depends(get_current_user)):
 
     # Free users see only 1 stock
     if not user.is_paid:
-        return signals[:1]
+        return signals[:10]
 
     return signals
