@@ -25,5 +25,5 @@ app.include_router(billing_router, prefix="/billing", tags=["Billing"])
 
 
 @app.get("/")
-def hello():
+def home():
     return {"message":"appi running"}

@@ -1,3 +1,5 @@
+import os
+from dotenv import load_dotenv
 from sqlalchemy import create_engine
 #creates engine which wraps around the database
 
@@ -6,9 +8,11 @@ from sqlalchemy.ext.declarative import declarative_base
 #base class from where all the base data model so we know which models we have
 #from core.config import settings
 
-DATABASE_URL = "sqlite:///test.db"
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
 engine = create_engine(
-    DATABASE_URL, connect_args={"check_same_thread": False}
+    DATABASE_URL
 )
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
